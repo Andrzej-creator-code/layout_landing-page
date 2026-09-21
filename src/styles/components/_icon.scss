@@ -1,0 +1,17 @@
+.icon {
+  display: block;
+  height: 32px;
+  width: 32px;
+
+  &--phone {
+    background: url('../images/Icon-Phone-call.png') no-repeat center / contain;
+  }
+
+  &--menu {
+    background: url('../images/Icon-Burger-menu.png') no-repeat center / contain;
+  }
+
+  &--close {
+    background: url('../images/Icon-Close.png') no-repeat center / contain;
+  }
+}

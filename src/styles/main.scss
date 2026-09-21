@@ -1,4 +1,7 @@
-/* #region page */
+@import 'variables';
+@import 'mixins';
+
+
 *,
 *::before,
 *::after {
@@ -8,170 +11,42 @@
 }
 
 .page {
-  font-family: Poppins, sans-serif;
-  color: #635ada;
+  font-family: $main-font;
+  color: $color-primary;
   font-size: 23px;
   line-height: 140%;
   scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
 }
 
-.page__body {
-  margin: 0;
+@import 'components/icon';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/nav';
+
+.main {
+  section {
+    padding: 60px 20px;
+    h2 {
+      margin: 0;
+    }
+  }
 }
-
-.page__menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 100;
-}
-
-.page__menu:target {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* #endregion */
-
-/* #region header */
-.header {
-  box-sizing: border-box;
-  height: 100vh;
-  background-image: url('../Cover_photo.png');
-  background-size: cover;
-  background-position: center;
-  padding: 24px 20px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.header__top {
-  display: flex;
-  justify-content: space-between;
-}
-
-.header__icons {
-  display: flex;
-  gap: 32px;
-}
-
-.header__title {
-  margin: 0;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 100%;
-  letter-spacing: -1.5px;
-}
-
-/* #endregion */
-
-/* #region menu */
-.menu {
-  box-sizing: border-box;
-  height: 100vh;
-  background-color: #c2c2c2;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 24px 20px 40px;
-}
-
-.menu__content {
-  position: relative;
-}
-
-.top-bar {
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu__nav {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-.menu__phone-number {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  line-height: 27px;
-  margin-bottom: 16px;
-}
-
-.menu__call-to-order {
-  color: inherit;
-  padding-bottom: 7px;
-  border-bottom: 1px solid black;
-  width: fit-content;
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 2px;
-  display: block;
-}
-
-/* #endregion */
-
-/* #region nav */
-.nav__link {
-  color: inherit;
-  text-decoration: none;
-  font-size: 22px;
-  line-height: 22px;
-  letter-spacing: 2px;
-}
-
-.nav__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-/* #endregion */
-
-/* #region main sections */
-.main section {
-  padding: 60px 20px;
-}
-
-.main section h2 {
-  margin: 0;
-}
-
-/* #endregion */
-
-/* #region icon */
-.icon {
-  display: block;
-  height: 32px;
-  width: 32px;
-}
-
-.icon--phone {
-  background: url('../images/icon-Phone-call.png') no-repeat center / 80%;
-}
-
-.icon--menu {
-  background: url('../images/icon-Burger-menu.png') no-repeat center / 80%;
-}
-
-.icon--close {
-  background: url('../images/icon-Close.png') no-repeat right center / 32px;
-  width: 96px;
-}
-
-/* #endregion */
-
-/* #region footer */
-
-/* #endregion */
